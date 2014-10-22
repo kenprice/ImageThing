@@ -34,7 +34,7 @@ gem "twitter-bootstrap-rails"
 
 
 group :test do
-	gem 'cucumber-rails'
+	gem 'cucumber-rails', :require => false
 	gem 'rspec'
 	gem 'database_cleaner'
 	gem 'selenium-webdriver'
