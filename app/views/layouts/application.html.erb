@@ -49,7 +49,7 @@
           <a class="brand" href="#">ImageSpace</a>
           <div class="container nav-collapse">
             <ul class="nav">
-              <li><%= link_to "Link1", "/path1"  %></li>
+              <li><%= link_to "Signup", "/signup"  %></li>
               <li><%= link_to "Link2", "/path2"  %></li>
               <li><%= link_to "Link3", "/path3"  %></li>
             </ul>
@@ -59,6 +59,10 @@
     </header>
     
           <%= yield %>
+          
+            
+          <%= debug(params) if Rails.env.development? %>
+
 
 </body>
 </html>

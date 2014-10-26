@@ -1,5 +1,49 @@
-<h1>New user</h1>
+<% provide(:title, 'Sign up') %>
 
-<%= render 'form' %>
 
-<%= link_to 'Back', users_path %>
+
+    <div class="container">
+        <div class="row">
+          <div class="span9">
+            <%= bootstrap_flash %>
+            
+          </div>
+          <div class="span12 home">
+            
+            <div id="fullscreen_bg" class="fullscreen_bg"/>
+
+				<div class="container">
+
+
+                  <%= form_for(@user) do |f| %>
+                    <h1>Sign up</h1>
+                    <%= f.label :email %>
+                    <%= f.text_field :email, class: 'form-control' %>
+              
+                    <%= f.label :name %> (Optional)
+                    <%= f.text_field :name, class: 'form-control' %>
+                    
+                    <%= f.label :password %>
+                    <%= f.password_field :password, class: 'form-control' %>
+              
+                    <%= f.label :password_confirmation, "Confirmation" %>
+                    <%= f.password_field :password_confirmation, class: 'form-control' %>
+              
+                    <%= f.submit "Create my account", class: "btn btn-primary" %>
+                    
+                    
+                  <% end %>
+
+				</div>
+
+
+        </div><!--/row-->
+
+      <footer>
+        <p>&copy; ImageSpace Inc 2014</p>
+      </footer>
+
+  
+
+    </div> <!-- /container -->
+

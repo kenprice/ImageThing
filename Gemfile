@@ -28,14 +28,17 @@ gem 'jbuilder', '~> 1.2'
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
+gem 'bootstrap-sass', '~> 3.2.0'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
 gem 'bcrypt-ruby'
 
 group :development, :test do
-  # Use sqlite3 as the database for Active Record
-	gem 'sqlite3'	
+  gem 'sqlite3'
+  gem 'byebug',      '3.4.0'
+  gem 'web-console', '2.0.0.beta3'
+  gem 'spring',      '1.1.3'
 end
 
 group :test do

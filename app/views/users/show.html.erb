@@ -1,29 +1,64 @@
-<p id="notice"><%= notice %></p>
+    <div class="container">
+        <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+        <% end %>
+    
+        <div class="span12">
+  
+          <% provide(:title, @user.name) %>
+            
+          <div class="row">
+            <aside class="col-md-4">
+              <section class="user_info">
+                <h1>
+                  <%= if @user.profile_img
+                        puts "<img class='profile-img'></img>"
+                      end
+                  %>
+                  
+                  <%= if @user.name 
+                        @user.name
+                      else
+                        @user.email 
+                      end
+                  %>
+                </h1>
+                
+                <p>
+                  <strong>Email:</strong>
+                  <%= @user.email %>
+                </p>
+                
+                <p>
+                  <strong>Name:</strong>
+                  <%= @user.name %>
+                </p>
+                
+                <p>
+                  <strong>Profile img:</strong>
+                  <%= @user.profile_img %>
+                </p>
+                
+                <p>
+                  <strong>Profile bio:</strong>
+                  <%= @user.profile_bio %>
+                </p>
+              </section>
+            </aside>
+          </div>
+            
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+            
 
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
+  
+  
+        </div><!--/row-->
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+      <footer>
+        <p>&copy; ImageSpace Inc 2014</p>
+      </footer>
 
-<p>
-  <strong>Profile img:</strong>
-  <%= @user.profile_img %>
-</p>
+  
 
-<p>
-  <strong>Profile bio:</strong>
-  <%= @user.profile_bio %>
-</p>
+    </div> <!-- /container -->
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
