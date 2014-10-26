@@ -56,12 +56,10 @@ end
 
 
 group :production do
-  gem 'pg',             '0.17.1'
+  gem 'pg',             '0.17.1'  #use PostgreSQL
   gem 'rails_12factor', '0.0.2'
+  gem 'unicorn',        '4.8.3'   #use unicorn app server
 end
-
-# Use unicorn as the app server
-# gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
