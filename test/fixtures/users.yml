@@ -1,13 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# Commented out default fixtures
 
-one:
-  email: MyString
-  password: MyString
-  profile_img: 1
-  profile_bio: MyText
+#one:
+#  email: MyString
+#  password: MyString
+#  name: MyString
+#  profile_img: 1
+#  profile_bio: MyText
 
-two:
-  email: MyString
-  password: MyString
-  profile_img: 1
-  profile_bio: MyText
+#two:
+#  email: MyString
+#  password: MyString
+#  name: MyString
+#  profile_img: 1
+#  profile_bio: MyText

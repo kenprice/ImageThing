@@ -32,6 +32,9 @@ gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
 
+# Use ActiveModel has_secure_password
+gem 'bcrypt'
+gem 'bcrypt-ruby'
 
 group :test do
 	gem 'cucumber-rails', :require => false
@@ -46,8 +49,6 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
 # gem 'unicorn'
