@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
                       format: { with: VALID_EMAIL_REGEX },
                       uniqueness: { case_sensitive: false }
   validates :name, length: { maximum: 60 }
-  validates :password, length: { minimum: 6 }
+  validates :password, length: { minimum: 6 }, allow_blank: true
   
   
   # Returns the hash digest of the given string.

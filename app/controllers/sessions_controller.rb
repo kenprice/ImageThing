@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       #login
       log_in user
-      redirect_to user_path(user)
+      redirect_back_or user_path(user)
     else
       #login error
       flash.now[:danger] = "Invalid"
