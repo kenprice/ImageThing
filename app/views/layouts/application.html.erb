@@ -13,6 +13,7 @@
     <![endif]-->
 
     <%= stylesheet_link_tag "application", :media => "all", "data-turbolinks-track" => true %>
+    <%= yield :view_specific_css %>
 
     <!-- For third-generation iPad with high-resolution Retina display: -->
     <!-- Size should be 144 x 144 pixels -->
@@ -38,7 +39,7 @@
   </head>
   <body>
 
-    <header class="navbar navbar-fixed-top">
+    <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
           <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
@@ -46,23 +47,34 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
+          
           <a class="brand" href="#">ImageSpace</a>
           <div class="container nav-collapse">
             <ul class="nav">
-              <li><%= link_to "Signup", "/signup"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
+              <% if logged_in? %>
+                <li><%= link_to "Log Out", logout_path, method: "delete" %></li>
+                <li><%= link_to "Profile", user_path(current_user) %></li>
+              <% else %>
+                <li><%= link_to "Log In", "/login"  %></li>
+                <li><%= link_to "Signup", "/signup"  %></li>
+              <% end %>
             </ul>
           </div>
         </div>
       </div>
-    </header>
+    </div>
     
+    <div class="container">
+      <%= render partial: "layouts/messages", flash: flash %> 
+    </div>
+    
+    <div class="container">
           <%= yield %>
-          
-            
+    </div>
           <%= debug(params) if Rails.env.development? %>
-
+    <footer>
+      <p>&copy; ImageSpace Inc 2014</p>
+    </footer>
 
 </body>
 </html>

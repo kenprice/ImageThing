@@ -32,6 +32,9 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     
     #should go to user's profile page
     assert_template 'users/show'
+    
+    #verify user is logged in
+    assert is_logged_in?
   end
 end
 

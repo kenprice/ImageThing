@@ -1,14 +1,15 @@
-<% content_for :view_specific_css do %>
-    <%= stylesheet_link_tag "home/home.css" %>
-<% end %>
 
-    <div class="row">
-      <div class="span9">
+
+    <div class="container">
+        <div class="row">
+          <div class="span9">
             <%= bootstrap_flash %>
             
-      </div>
-      <div class="span12 home">
-          
+          </div>
+          <div class="span12 home">
+            
+            <div id="fullscreen_bg" class="fullscreen_bg"/>
+
 				<div class="container">
 
 					<form class="form-signin">
@@ -20,11 +21,17 @@
 						</button>
 					</form>
 
-        </div>
-      </div>
 
-    </div><!--/row-->
+				</div>
+
+
+        </div><!--/row-->
 
       <footer>
         <p>&copy; ImageSpace Inc 2014</p>
       </footer>
+
+  
+
+    </div> <!-- /container -->
+

@@ -1,11 +1,6 @@
-    <div class="container">
-        <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>"><%= message %></div>
-        <% end %>
-    
-        <div class="span12">
-  
-          <% provide(:title, @user.name) %>
+<% provide(:title, @user.name) %>
+      <div class="span12">
+        <% bootstrap_flash %>  
             
           <div class="row">
             <aside class="col-md-4">
@@ -53,12 +48,4 @@
   
   
         </div><!--/row-->
-
-      <footer>
-        <p>&copy; ImageSpace Inc 2014</p>
-      </footer>
-
-  
-
-    </div> <!-- /container -->
 

@@ -2,12 +2,7 @@
 
 
 
-    <div class="container">
-        <div class="row">
-          <div class="span9">
-            <%= bootstrap_flash %>
-            
-          </div>
+        <div class="row"> 
           <div class="span12 home">
             
             <div id="fullscreen_bg" class="fullscreen_bg"/>
@@ -15,8 +10,10 @@
 				<div class="container">
 
 
-                  <%= form_for(@user) do |f| %>
+                  <%= form_for(@user, :html => {:class => 'userforms'}) do |f| %>
                     <h1>Sign up</h1>
+                    <%= bootstrap_flash %>
+                    
                     <%= f.label :email %>
                     <%= f.text_field :email, class: 'form-control' %>
               
@@ -39,11 +36,7 @@
 
         </div><!--/row-->
 
-      <footer>
-        <p>&copy; ImageSpace Inc 2014</p>
-      </footer>
+
 
   
-
-    </div> <!-- /container -->
 

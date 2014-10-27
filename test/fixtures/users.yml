@@ -1,16 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 # Commented out default fixtures
 
-#one:
-#  email: MyString
-#  password: MyString
-#  name: MyString
-#  profile_img: 1
-#  profile_bio: MyText
+ken:
+  email: kenprice@asu.edu
+  password_digest: <%= User.digest('password') %>
+  name: Ken Price
+  profile_img: 1
+  profile_bio: MyText
 
-#two:
-#  email: MyString
-#  password: MyString
-#  name: MyString
-#  profile_img: 1
-#  profile_bio: MyText
+jordan:
+  email: jross@asu.edu
+  password_digest: <%= User.digest('password') %>
+  name: Jordan Ross
+  profile_img: 2
+  profile_bio: MyText

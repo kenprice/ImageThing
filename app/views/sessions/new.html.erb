@@ -1,0 +1,33 @@
+<% provide(:title, 'Log In') %>
+
+
+
+        <div class="row">
+          <div class="span12 home">
+            
+            <div id="fullscreen_bg" class="fullscreen_bg"/>
+
+				<div class="container">
+
+
+                  <%= form_for(:session, url: login_path, :html => {:class => 'userforms'}) do |f| %>
+                    <h1>Log in</h1>
+                    <%= bootstrap_flash %>
+                    
+                    <%= f.label :email %>
+                    <%= f.text_field :email, class: 'form-control' %>
+              
+                    <%= f.label :password %>
+                    <%= f.password_field :password, class: 'form-control' %>
+              
+                    <%= f.submit "Log in", class: "btn btn-primary" %>
+                    
+                    <p>New user? <%= link_to "Register now!", signup_path %></p>
+                  <% end %>
+                
+				</div>
+
+
+        </div><!--/row-->
+
+
