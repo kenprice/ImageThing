@@ -1,40 +1,31 @@
 <% provide(:title, 'Sign up') %>
-
-
-
-        <div class="row"> 
-          <div class="span12 home">
-            
-            <div id="fullscreen_bg" class="fullscreen_bg"/>
-
-				<div class="container">
-
-
-                  <%= form_for(@user, :html => {:class => 'userforms'}) do |f| %>
-                    <h1>Sign up</h1>
-                    <%= bootstrap_flash %>
+  <div class="row"> 
+    <div class="span12 home">
+      <div id="fullscreen_bg" class="fullscreen_bg"/>
+			  <div class="container">
+			  
+          <%= form_for(@user, :html => {:class => 'userforms'}) do |f| %>
+            <h1>Sign up</h1>
+            <%= bootstrap_flash %>
                     
-                    <%= f.label :email %>
-                    <%= f.text_field :email, class: 'form-control' %>
+            <%= f.label :email %>
+            <%= f.text_field :email, class: 'form-control' %>
               
-                    <%= f.label :name %> (Optional)
-                    <%= f.text_field :name, class: 'form-control' %>
+            <%= f.label :name %> (Optional)
+            <%= f.text_field :name, class: 'form-control' %>
                     
-                    <%= f.label :password %>
-                    <%= f.password_field :password, class: 'form-control' %>
+            <%= f.label :password %>
+            <%= f.password_field :password, class: 'form-control' %>
               
-                    <%= f.label :password_confirmation, "Confirmation" %>
-                    <%= f.password_field :password_confirmation, class: 'form-control' %>
+            <%= f.label :password_confirmation, "Confirmation" %>
+            <%= f.password_field :password_confirmation, class: 'form-control' %>
               
-                    <%= f.submit "Create my account", class: "btn btn-primary" %>
-                    
-                    
-                  <% end %>
+            <%= f.submit "Create my account", class: "btn btn-primary" %>
 
+          <% end %>
 				</div>
-
-
-        </div><!--/row-->
+		</div>
+  </div><!--/row-->
 
 
 

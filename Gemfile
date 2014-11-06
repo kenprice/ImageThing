@@ -24,7 +24,7 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-#custome gems
+#custom gems
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
@@ -33,6 +33,9 @@ gem 'bootstrap-sass', '~> 3.2.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
 gem 'bcrypt-ruby'
+
+#for image processing
+gem "paperclip", "~> 4.2"
 
 group :development, :test do
   gem 'sqlite3'

@@ -11,6 +11,9 @@ class User < ActiveRecord::Base
   validates :name, length: { maximum: 60 }
   validates :password, length: { minimum: 6 }, allow_blank: true
   
+  #From Paperclip github page
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+  do_not_validate_attachment_file_type :avatar
   
   # Returns the hash digest of the given string.
   def User.digest(string)
