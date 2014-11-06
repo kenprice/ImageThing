@@ -35,7 +35,7 @@ gem 'bcrypt'
 gem 'bcrypt-ruby'
 
 #for image processing
-gem "paperclip", "~> 4.2"
+gem "paperclip", "~> 4.1"
 
 group :development, :test do
   gem 'sqlite3'

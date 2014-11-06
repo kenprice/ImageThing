@@ -225,7 +225,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   less-rails
-  paperclip (~> 4.2)
+  paperclip (~> 4.1)
   pg (= 0.17.1)
   rails (= 4.0.2)
   rails_12factor (= 0.0.2)

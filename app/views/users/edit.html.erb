@@ -3,19 +3,17 @@
     <div class="span12 home">
       <div id="fullscreen_bg" class="fullscreen_bg"/>
         <div class="container">
-          <%= form_for @user, :url => users_path, :html => { :class => 'userforms', :multipart => true } do |f| %>
+        <%= form_for(@user, :html => {:class => 'userforms'}) do |f| %>
             <h1>Edit Profile</h1>
             <%= bootstrap_flash %>
           
             <%= f.label :name %>
             <%= f.text_field :name, class: 'form-control' %>
-            
-            <!-- Avatar -->          
-            <%= f.file_field :avatar %>
-            <!-- Avatar -->
 
             <%= f.label :profile_bio %>
             <%= f.text_field :profile_bio, class: 'form-control' %>
+          
+            <%= f.file_field :avatar %>
           
             <%= f.label :password %>
             <%= f.password_field :password, class: 'form-control' %>
