@@ -1,0 +1,35 @@
+<% provide(:title, @post.title + " - Editing") %>
+      <div class="span12">
+        <% bootstrap_flash %>  
+            
+          <div class="row">
+            <h1><%= @post.title %></h1>
+            <aside class="col-md-8">
+              <section class="photo_info">
+                  <%= image_tag @post.photo.url %>
+                
+                <p>
+                  <%= @post.caption %>
+                </p>
+
+
+              </section>
+            </aside>
+            <div class="col-md-4">
+                <%= form_for @post, :url => post_path, :html => { :multipart => true } do |f| %>
+
+                  <%= bootstrap_flash %>
+
+                  <%= f.label :title %>
+                  <%= f.text_field :title, class: 'form-control' %>
+
+                  <%= f.label :caption %>
+                  <%= f.text_field :caption, class: 'form-control' %>
+
+                  <%= f.submit "Submit post", class: "btn btn-primary" %>
+                <% end %>
+
+                <p><%= link_to "Back", @post.user %></p>
+            </div>
+          </div>  
+        </div><!--/row-->

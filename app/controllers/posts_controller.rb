@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :logged_in_user, only: [:new, :update]
+  before_action :logged_in_user, only: [:new, :update, :edit]
 
   def index  
     @post = Post.all
@@ -11,6 +11,12 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+
+    if current_user?
+      render 'edit'
+    else
+      redirect_to @post
+    end
   end
   
   def update
@@ -38,6 +44,11 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     #debugger
+    if current_user?
+      render 'edit'
+    else
+      redirect_to @post
+    end
   end
 
 	private
@@ -54,6 +65,17 @@ class PostsController < ApplicationController
         store_location
         flash[:danger] = "Please log in."
         redirect_to login_url
+      end
+    end
+    
+    def current_user?
+      #makes sure only correct users can access certain pages
+      @post = Post.find(params[:id])
+      user = @post.user
+      if user == current_user
+        true
+      else
+        false
       end
     end
 end

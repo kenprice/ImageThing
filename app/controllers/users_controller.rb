@@ -1,10 +1,9 @@
 class UsersController < ApplicationController
   #Before filter
-  before_action :logged_in_user, only: [:edit, :update, :index]
-  before_action :correct_user, only: [:edit, :update]
+  before_action :logged_in_user, only: [:edit, :update, :index, :front]
+  before_action :correct_user, only: [:edit, :update, :front]
   
-  def index
-    
+  def index  
     @user = User.all
   end
   # GET /users/1
@@ -12,8 +11,6 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = @user.posts.page(params[:page])
-
-    #debugger
   end
 
   def edit
@@ -46,6 +43,14 @@ class UsersController < ApplicationController
       flash[:error] = "Invalid"
       render 'new'
     end
+  end
+
+  #GET /users/front
+  def front
+    #User's personal front page. Only user can access. Shows all
+    #user photos and allows him to edit.
+    @user = User.find(params[:id])
+    @posts = @user.posts.page(params[:page])
   end
 
   private

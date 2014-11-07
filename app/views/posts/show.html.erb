@@ -3,26 +3,28 @@
         <% bootstrap_flash %>  
             
           <div class="row">
-            <aside class="col-md-4">
-              <section class="user_info">
-                <h1>
+            <h1><%= @post.title %></h1>
+            <aside class="col-md-8">
+              <section class="photo_info">
                   <%= image_tag @post.photo.url %>
-                  
-                <p>
-                  <%= @post.title %>
-                </p>
                 
                 <p>
                   <%= @post.caption %>
                 </p>
+
+
               </section>
             </aside>
-          </div>
-            
-
-            
-
-  
-  
+            <div class="col-md-4">
+              <h2>Posted By:</h2>
+              <!--user info -->
+              <%= image_tag @post.user.avatar.url(:thumb) %>    
+              <%= if @post.user.name 
+                    @post.user.name
+                  else
+                    @post.user.email 
+                  end
+              %>
+            </div>
+          </div>  
         </div><!--/row-->
-

@@ -4,8 +4,12 @@ ImageSpace::Application.routes.draw do
   
   root    "home#index"
   get     'signup' => 'users#new'
-  
-  #RESTFUL actions for login
+
+  scope :path => "users/:id/front", :as => "front" do
+  	get "/" => 'users#front'
+  end
+
+  #RESTful actions for login
   get     'login' => "sessions#new"
   post    'login' => "sessions#create"
   delete  'logout' => "sessions#destroy"
