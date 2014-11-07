@@ -3,8 +3,6 @@ This is based on the ImageSpace git. It is still called ImageSpace, however the 
 
 Author: Ken Price, Jordan Ross
 
-
-
 ## Set up
 * `bundle install` to install dependencies
 
@@ -14,8 +12,6 @@ Author: Ken Price, Jordan Ross
 
 * Go to your web browser and open "http://localhost:3000"
 
-## To run unit tests
+## To run tests
 
 * run `bundle exec rake test`
-
-The source file for test is at test folder.
