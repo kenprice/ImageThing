@@ -1,0 +1,15 @@
+orange:
+  title: "Lorem"
+  created_at: <%= 10.minutes.ago %>
+
+tau_manifesto:
+  title: "Ipsum"
+  created_at: <%= 3.years.ago %>
+
+cat_video:
+  title: "Soemthing"
+  created_at: <%= 2.hours.ago %>
+
+most_recent:
+  title: "Cool stuff"
+  created_at: <%= Time.zone.now %>

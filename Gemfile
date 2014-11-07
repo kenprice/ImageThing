@@ -24,7 +24,7 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-#custom gems
+#custome gems
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
@@ -34,8 +34,13 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'bcrypt'
 gem 'bcrypt-ruby'
 
-#for image processing
-gem "paperclip", "~> 4.1"
+#Paperclip for image upload and processing
+gem "paperclip", "~> 4.2"
+
+#pagination
+gem 'will_paginate',           '3.0.7'
+gem 'bootstrap-will_paginate', '0.0.10'
+
 
 group :development, :test do
   gem 'sqlite3'

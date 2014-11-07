@@ -4,16 +4,17 @@ class User < ActiveRecord::Base
                       #virtual attributes
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   before_save { self.email = self.email.downcase }
-  validates :email, presence: true, 
+  validates :email, presence: true,
                       length: { maximum: 200 }, 
                       format: { with: VALID_EMAIL_REGEX },
                       uniqueness: { case_sensitive: false }
   validates :name, length: { maximum: 60 }
   validates :password, length: { minimum: 6 }, allow_blank: true
   
-  #From Paperclip github page
-  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/assets/:style/thumb.jpg"
-  do_not_validate_attachment_file_type :avatar
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+
+  has_many :posts, dependent: :destroy # posts belong to users
   
   # Returns the hash digest of the given string.
   def User.digest(string)

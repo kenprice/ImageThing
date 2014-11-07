@@ -1,0 +1,33 @@
+
+
+<% provide(:title, 'New Post') %>
+  <div class="row"> 
+    <div class="span12 home">
+      <div id="fullscreen_bg" class="fullscreen_bg"/>
+			  <div class="container">
+
+          <%= form_for @post, :url => posts_path, :html => { :multipart => true, :class => 'userforms' } do |f| %>
+
+           	<%= bootstrap_flash %>
+
+
+				  	<%= f.file_field :photo %>
+
+            <%= f.label :title %>
+            <%= f.text_field :title, class: 'form-control' %>
+
+            <%= f.label :caption %>
+            <%= f.text_field :caption, class: 'form-control' %>
+
+            <%= f.submit "Submit post", class: "btn btn-primary" %>
+					<% end %>
+
+				</div>
+
+
+      </div><!--/row-->
+
+
+
+  
+

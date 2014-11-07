@@ -1,0 +1,28 @@
+<% provide(:title, @post.title) %>
+      <div class="span12">
+        <% bootstrap_flash %>  
+            
+          <div class="row">
+            <aside class="col-md-4">
+              <section class="user_info">
+                <h1>
+                  <%= image_tag @post.photo.url %>
+                  
+                <p>
+                  <%= @post.title %>
+                </p>
+                
+                <p>
+                  <%= @post.caption %>
+                </p>
+              </section>
+            </aside>
+          </div>
+            
+
+            
+
+  
+  
+        </div><!--/row-->
+
