@@ -1,15 +1,11 @@
-orange:
-  title: "Lorem"
-  created_at: <%= 10.minutes.ago %>
+most_recent:
+  title: "Most recent post"
+  created_at: <%= Time.zone.now %>
 
-tau_manifesto:
-  title: "Ipsum"
+post2:
+  title: "Old Post"
   created_at: <%= 3.years.ago %>
 
-cat_video:
-  title: "Soemthing"
-  created_at: <%= 2.hours.ago %>
-
-most_recent:
-  title: "Cool stuff"
-  created_at: <%= Time.zone.now %>
+post3:
+  title: "Cool3"
+  created_at: <%= 10.minutes.ago %>
