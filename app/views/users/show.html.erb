@@ -26,15 +26,15 @@
                   <%= @user.name %>
                 </p>
                 
-                <p>
-                  <strong>Profile img:</strong>
-                  <%= @user.profile_img %>
-                </p>
                 
                 <p>
-                  <strong>Profile bio:</strong>
-                  <%= @user.profile_bio %>
+                  <strong>Bio:</strong>
                 </p>
+                <p>
+                  <%= simple_format h @user.profile_bio %>
+                </p>
+                  
+                
               </section>
             </aside>
             

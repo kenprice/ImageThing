@@ -1,9 +1,10 @@
 <% provide(:title, @user.name) %>
       <div class="span12">
         <div class="row">
+          <h1>My Posts</h1>
+          <span>Total Posts: <%= @user.posts.count %></span><br>
+          <span><%= link_to "Upload Photo", new_post_path %> </span>
           <% if @user.posts.any? %>
-            <h1>My Posts</h1>
-            <span><%= @user.posts.count %></span>
             <ol class="posts">
               <%= render @posts %>
             </ol>
