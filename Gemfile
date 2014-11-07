@@ -41,6 +41,8 @@ gem "paperclip", "~> 4.2"
 gem 'will_paginate',           '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
 
+#test coverage
+gem 'simplecov', :require => false, :group => :test
 
 group :development, :test do
   gem 'sqlite3'
