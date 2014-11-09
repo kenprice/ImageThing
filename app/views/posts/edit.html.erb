@@ -1,21 +1,25 @@
+
 <% provide(:title, @post.title + " - Editing") %>
       <div class="span12">
         <% bootstrap_flash %>  
             
           <div class="row">
             <h1><%= @post.title %></h1>
-            <aside class="col-md-8">
+            <div class="col-md-8">
               <section class="photo_info">
-                  <%= image_tag @post.photo.url %>
                 
+                  <%= image_tag @post.photo.url, :id => "img" %>
+
                 <p>
                   <%= @post.caption %>
                 </p>
 
 
               </section>
-            </aside>
+            </div>
             <div class="col-md-4">
+                <%= link_to "Edit Brightness", brightness_path(@post) %>
+
                 <%= form_for @post, :url => post_path, :html => { :multipart => true } do |f| %>
 
                   <%= bootstrap_flash %>
@@ -26,6 +30,7 @@
                   <%= f.label :caption %>
                   <%= f.text_field :caption, class: 'form-control' %>
 
+                <br> <br>
                   <%= f.submit "Submit post", class: "btn btn-primary" %>
                 <% end %>
 

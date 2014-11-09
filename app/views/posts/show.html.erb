@@ -4,7 +4,12 @@
             
           <div class="row">
             <h1><%= @post.title %></h1>
-            <aside class="col-md-8">
+            <%=
+              if @user
+                link_to "Edit", edit_post_path
+              end
+            %>
+            <div class="col-md-8">
               <section class="photo_info">
                   <%= image_tag @post.photo.url %>
                 
@@ -14,7 +19,7 @@
 
 
               </section>
-            </aside>
+            </div>
             <div class="col-md-4">
               <h2>Posted By:</h2>
               <!--user info -->

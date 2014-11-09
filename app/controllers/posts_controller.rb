@@ -1,4 +1,7 @@
+
+
 class PostsController < ApplicationController
+  include PostsHelper
   before_action :logged_in_user, only: [:new, :update, :edit]
 
   def index  
@@ -19,10 +22,30 @@ class PostsController < ApplicationController
     end
   end
   
+  def brightness
+    @post = Post.find(params[:id])
+
+    if !current_user?
+      redirect_to @post
+    end
+  end   
+
+  def update_brightness
+    @post = Post.find(params[:id])
+    if (params.has_key?(:brightness))
+      puts "======================================"
+      puts params[:brightness]
+
+      adjust_brightness params[:brightness].to_i, @post, @post.id
+    end
+
+    redirect_to @post
+  end
+
   def update
     @post = Post.find(params[:id])
     if @post.update_attributes(post_params)
-      # Handle a successful update  
+      # Handle a successful update
       flash[:success] = "Success!"
       redirect_to @post
     else
@@ -32,8 +55,10 @@ class PostsController < ApplicationController
 
 	def create
     @post = current_user.posts.build(post_params)
+
     if @post.save
       flash[:success] = "Post success!"
+
       redirect_to @post
     else
       flash[:error] = "Invalid"
@@ -43,11 +68,11 @@ class PostsController < ApplicationController
   
   def show
     @post = Post.find(params[:id])
-    #debugger
+
     if current_user?
-      render 'edit'
+      @user = @post.user
     else
-      redirect_to @post
+      @user = nil
     end
   end
 

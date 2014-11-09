@@ -11,7 +11,22 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
+//= require jquery-ui
 //= require bootstrap
+//= require twitter/bootstrap
 //= require turbolinks
+//= require bootstrap-slider
 //= require_tree .
+
+
+<script type="text/javascript">
+
+jQuery(window).load(function() {
+		// With JQuery
+		$('#ex1').slider({
+			formatter: function(value) {
+				return 'Current value: ' + value;
+			}
+		});
+}
+</script>

@@ -6,7 +6,12 @@ ImageSpace::Application.routes.draw do
   get     'signup' => 'users#new'
 
   scope :path => "users/:id/front", :as => "front" do
-  	get "/" => 'users#front'
+    get "/" => 'users#front'
+  end
+
+  scope :path => "posts/:id/brightness", :as => "brightness" do
+    get "/" => 'posts#brightness'
+    patch "/" => 'posts#update_brightness'
   end
 
   #RESTful actions for login

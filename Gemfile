@@ -16,7 +16,7 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 2.3.0'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -30,19 +30,21 @@ gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) support
 gem "twitter-bootstrap-rails"
 gem 'bootstrap-sass', '~> 3.2.0'
 
+gem 'jquery-ui-rails'
+gem 'bootstrap-slider-rails'
+
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
 gem 'bcrypt-ruby'
 
 #Paperclip for image upload and processing
 gem "paperclip", "~> 4.2"
+#Image manipulation, lighter than rmagick
+gem "mini_magick", "~> 4.0.0.rc"
 
 #pagination
 gem 'will_paginate',           '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
-
-#test coverage
-gem 'simplecov', :require => false, :group => :test
 
 group :development, :test do
   gem 'sqlite3'
@@ -56,6 +58,7 @@ group :test do
 	gem 'rspec'
 	gem 'database_cleaner'
 	gem 'selenium-webdriver'
+  gem 'simplecov', :require => false #test coverage
 end
 
 
