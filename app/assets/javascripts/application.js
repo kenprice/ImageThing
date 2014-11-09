@@ -17,16 +17,3 @@
 //= require turbolinks
 //= require bootstrap-slider
 //= require_tree .
-
-
-<script type="text/javascript">
-
-jQuery(window).load(function() {
-		// With JQuery
-		$('#ex1').slider({
-			formatter: function(value) {
-				return 'Current value: ' + value;
-			}
-		});
-}
-</script>
