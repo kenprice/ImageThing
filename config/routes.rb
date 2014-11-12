@@ -17,5 +17,6 @@ ImageSpace::Application.routes.draw do
   #RESTful actions for login
   get     'login' => "sessions#new"
   post    'login' => "sessions#create"
+  get     'logout' => "sessions#logout"
   delete  'logout' => "sessions#destroy"
 end

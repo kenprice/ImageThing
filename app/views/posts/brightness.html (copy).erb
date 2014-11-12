@@ -27,6 +27,18 @@
                 <input id="bslider" name="brightness" data-filter='brightness' data-slider-id='ex1Slider' type="text" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="0" max-width="100"/>
 
                 <script type="text/javascript">
+
+                  var newImage = new Image();
+                  newImage.src = <%= @post.photo.url %> + new Date();
+                  function updateImage(callback)
+                  {
+                    document.getElementById("img").src = newImage.src;
+                    if(newImage.complete) {
+                      callback();
+                    }
+                  }
+                </script>
+                <script type="text/javascript">
                   window.brightness = 0;
 
 

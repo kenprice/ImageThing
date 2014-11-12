@@ -7,7 +7,9 @@ module PostsHelper
 		#mogrify.call # executes
 		
 		system "mogrify -brightness-contrast " + level.to_s + "% " + image_path
-
+	
+		#system "convert -modulate " + (level+100).to_s + " " + image_path + " " + image_path
+		#system "convert -modulate " + (level+100).to_s + ",100,100 " + image_path + " " + image_path
 		post.photo.reprocess!
 
   #original_style_name = "original_#{record.image_file_name}"

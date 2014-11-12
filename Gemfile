@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby "2.1.2"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
@@ -34,8 +35,8 @@ gem 'jquery-ui-rails'
 gem 'bootstrap-slider-rails'
 
 # Use ActiveModel has_secure_password
-gem 'bcrypt'
-gem 'bcrypt-ruby'
+gem 'bcrypt', '3.1.7'
+gem 'bcrypt-ruby', '3.1.5'
 
 #Paperclip for image upload and processing
 gem "paperclip", "~> 4.2"
