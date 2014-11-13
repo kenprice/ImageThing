@@ -14,4 +14,10 @@ Author: Ken Price, Jordan Ross
 
 ## To run tests
 
-* run `bundle exec rake test`
+For unit and integration tests:
+* Run `bundle exec rake test`
+
+For functional testing with Cucumber:
+* First run `rails s -e test` to run server in test environment
+* Then run `bundle exec cucumber`
+* You may need to set up database for test environment. Use `bundle exec rake db:migrate RAILS_ENV=test"

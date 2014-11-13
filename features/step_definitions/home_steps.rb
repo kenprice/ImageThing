@@ -1,5 +1,5 @@
 Given(/^I am a new user$/) do
-  #logout user
+  visit "http://localhost:3000/logout" 
 end
 
 Given(/^I load the home page$/) do
@@ -8,6 +8,7 @@ end
 
 Given(/^I fill in "(.*?)" with "(.*?)"$/) do |field, value|
   fill_in(field, :with => value)
+  #page.find_field(field).set(value)
 end
 
 When(/^I press "(.*?)"$/) do |button|

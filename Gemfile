@@ -26,8 +26,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 #custome gems
-#gem "therubyracer"
-#gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem "therubyracer"
+gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
 gem 'bootstrap-sass', '~> 3.2.0'
 
