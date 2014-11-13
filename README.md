@@ -21,3 +21,5 @@ For functional testing with Cucumber:
 * First run `rails s -e test` to run server in test environment
 * Then run `bundle exec cucumber`
 * You may need to set up database for test environment. Use `bundle exec rake db:migrate RAILS_ENV=test"
+
+Functional tests can be found in "/features/"
