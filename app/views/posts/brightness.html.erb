@@ -1,4 +1,4 @@
-<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/camanjs/4.0.0/caman.full.min.js"></script>
+
 
 <% provide(:title, @post.title + " - Editing") %>
       <div class="span12">
@@ -19,35 +19,37 @@
               </section>
             </div>
             <div class="col-md-4">
-                <%= form_for @post, url: brightness_path(@post), method: :patch do |f| %>
+              <%= form_for @post, url: brightness_path(@post), method: :patch do |f| %>
 
-                  <%= bootstrap_flash %>
+                <%= bootstrap_flash %>
                 
-                  <label>Brightness</label>
-                <input id="bslider" name="brightness" data-filter='brightness' data-slider-id='ex1Slider' type="text" data-slider-min="-100" data-slider-max="100" data-slider-step="1" data-slider-value="0" max-width="100"/>
+                <label>Brightness</label>
 
-                <script type="text/javascript">
-                  window.brightness = 0;
+                <div id="Filters">
+                  
+                  <div class="Filter">
 
+                    <div class="FilterSetting">
+                      <input 
+                        id="bslider" 
+                        data-filter="brightness"
+                        name="brightness" 
+                        type="range"
+                        min="-100" 
+                        max="100" 
+                        step="1" 
+                        value="0" 
+                        max-width="100"/>
+                      <span class="FilterValue">0</span>
+                    </div>
+                  </div>
+                </div>
+                
 
-
-                  $('#bslider').slider().on('slide', function(ev) { 
-                      $('#bar').val(ev.value);
-
-                      Caman('#img', function () {
-                          //this.brightness(ev.value);
-                          //this.resetOriginalPixelData();
-                          this.brightness(ev.value - window.brightness).render();
-                          window.brightness = ev.value;
-                          //this.render();
-                        });
-                    });
-
-                </script>
 
                 <br> <br>
                   <%= f.submit "Submit post", class: "btn btn-primary" %>
-                <% end %>
+              <% end %>
 
                 <p><%= link_to "Back", @post.user %></p>
             </div>

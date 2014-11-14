@@ -40,4 +40,21 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", logout_path,      count: 0
     assert_select "a[href=?]", user_path(@user), count: 0
   end
+  
+  test "invalid login then log out" do
+    get login_path
+    @user.email = "garbage"
+    post login_path, session: { email: @user.email, password: 'password' }
+    
+    #Should render new login form
+    assert_template 'sessions/new'
+    #check if there's a new user session
+    assert !is_logged_in?
+    
+    #login link should not be shown
+    #logout and profile links should be shown
+    assert_select "a[href=?]", login_path
+    assert_select "a[href=?]", logout_path, count: 0
+    assert_select "a[href=?]", user_path(@user), count: 0
+  end
 end
