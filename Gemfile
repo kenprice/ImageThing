@@ -57,9 +57,10 @@ end
 group :test do
 	gem 'cucumber-rails', :require => false
 	gem 'rspec'
-	gem 'database_cleaner'
+	gem 'database_cleaner', :require => false
 	gem 'selenium-webdriver'
   gem 'simplecov', :require => false #test coverage
+  gem 'warden'
 end
 
 

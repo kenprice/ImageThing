@@ -3,10 +3,14 @@ Given(/^I load the signup page$/) do
 end
 
 Then(/^the profile page of "(.*?)" is loaded$/) do |user|
-  page.should have_content("user")  
+  page.should have_content(user)
 end
 
-Given(/^the user inputs "(.*?)" into password field$/) do |password|
+Then(/^the signup page is loaded$/) do
+  page.should have_content("Sign up")  
+end
+
+Given(/^the user inputs "(.*?)" into password fields$/) do |password|
 	#This is a hacky workaround.
 	#what this next line does is find element with id user_password
 	#(user_password field in this case, see user/new.html.erb)
@@ -20,9 +24,9 @@ Given(/^the user inputs "(.*?)" into password field$/) do |password|
 	#elements, Capybara is having trouble finding fields on the signup page.
 
 	#But hey, this works:
-	find("#user_password").set(password + "\t" + password + "\r")
+	#find("#user_password").set(password + "\t" + password + "\r")
   
   #This doesn't work:
-  #fill_in("Password", with: password, :match => :prefer_exact)
-  #fill_in("Password confirmation", with: password, :match => :prefer_exact)
+  fill_in("Password", with: password, :match => :prefer_exact)
+  fill_in("Password confirmation", with: password, :match => :prefer_exact)
 end

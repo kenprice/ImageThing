@@ -47,18 +47,18 @@
       ],
       "/home/batman/imgspace/app/helpers/application_helper.rb": [
         1,
-        1,
-        0,
         null,
-        0,
         null,
-        0,
         null,
-        0,
         null,
-        0,
         null,
-        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         null,
         null
@@ -126,10 +126,6 @@
       ],
       "/home/batman/imgspace/app/helpers/users_helper.rb": [
         1,
-        null,
-        1,
-        0,
-        null,
         null,
         null
       ],
@@ -629,6 +625,6 @@
         null
       ]
     },
-    "timestamp": 1415997880
+    "timestamp": 1416012199
   }
 }
