@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-ImageSpace::Application.config.secret_key_base = '9e85ee684fe02e1b6fa60c65d37cb7d9dacbb6b976a911104a3879f715b404492d5d5885820b4842c77c4e9de8c07090d4421f27336aaa300b72489be1b19c81'
+ImageThing::Application.config.secret_key_base = '9e85ee684fe02e1b6fa60c65d37cb7d9dacbb6b976a911104a3879f715b404492d5d5885820b4842c77c4e9de8c07090d4421f27336aaa300b72489be1b19c81'

@@ -16,5 +16,13 @@ When(/^I press "(.*?)"$/) do |button|
 end
 
 Then(/^the same home page is loaded$/) do
-  page.should have_content("ImageSpace")  
+  page.should have_content("ImageThing")  
+end
+
+When(/^I click "(.*?)"$/) do |link|
+  click_link(link) 
+end
+
+Then(/^the profile page is loaded$/) do
+  page.should have_content("Profile Page")  
 end

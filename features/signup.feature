@@ -8,7 +8,7 @@ User successfully registers and is automatically redirected to his profile page.
         And I fill in "user_name" with "Someuser2"
 				And the user inputs "password" into password fields
 				When I press "submit"
-        Then the profile page of "Someuser" is loaded
+        Then the profile page of "Someuser2" is loaded
 
     Scenario: New user attempts to register with invalid information
 				Given I am a new user

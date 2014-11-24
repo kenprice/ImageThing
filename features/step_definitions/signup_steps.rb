@@ -1,3 +1,19 @@
+#User registered
+Given(/^I am already registered$/) do
+  visit "http://localhost:3000/logout"			#First, log out.
+
+  @current_user = User.create!(:email => 'user@fake.com', :name => 'fakeuser', :password => 'password', :password_confirmation => 'password')
+  
+  visit "http://localhost:3000" #Home page
+
+  #Fill out login form, then log in
+  fill_in("session_email", :with => @current_user.email)
+  fill_in("session_password", :with => @current_user.password)
+  click_button("submit")
+
+  #Should now be in profile page, logged in
+end
+
 Given(/^I load the signup page$/) do
   visit "http://localhost:3000/signup" 
 end
@@ -11,22 +27,9 @@ Then(/^the signup page is loaded$/) do
 end
 
 Given(/^the user inputs "(.*?)" into password fields$/) do |password|
-	#This is a hacky workaround.
-	#what this next line does is find element with id user_password
-	#(user_password field in this case, see user/new.html.erb)
-	#and then fill the field with password, hits Tab, enters password
-	#again (should be confirmation field), then hits Enter.
-
-	#The reason for this workaround is because Capybara failed to find
-	#user_password_confirmation field. Even after the workaround to skip
-	#that field, it couldn't find the submit button. The home page test
-	#did not have this problem. So, it appears after a certain number of
-	#elements, Capybara is having trouble finding fields on the signup page.
-
-	#But hey, this works:
-	#find("#user_password").set(password + "\t" + password + "\r")
-  
-  #This doesn't work:
   fill_in("Password", with: password, :match => :prefer_exact)
   fill_in("Password confirmation", with: password, :match => :prefer_exact)
+
+	#Use this if above doesn't work:
+	#find("#user_password").set(password + "\t" + password + "\r")
 end

@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-ImageSpace::Application.load_tasks
+ImageThing::Application.load_tasks
