@@ -1,5 +1,4 @@
-Feature: A new user comes to home page and fills the email and password to login. 
-         But website returns the same home page as reply
+Feature: Home page allows users to log in or navigate to sign up page
  
     Scenario: New user tries to log in
         Given I am a new user
