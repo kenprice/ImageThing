@@ -4,6 +4,9 @@ ruby "2.1.2"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
+#Amazon AWS for S3
+gem 'aws-sdk'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
