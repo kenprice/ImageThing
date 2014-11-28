@@ -81,7 +81,7 @@ ImageThing::Application.configure do
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_credentials => {
-      :bucket => ENV['imagething'],
+      :bucket => BUCKET_NAME['imagething'],
       :access_key_id => ENV['AKIAICOF3CG6MMYBTJ7A'],
       :secret_access_key => ENV['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']
     }
