@@ -78,12 +78,12 @@ ImageThing::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  config.paperclip_defaults = {
-    :storage => :s3,
-    :s3_credentials => {
-      :bucket => BUCKET_NAME['imagething'],
-      :access_key_id => ENV['AKIAICOF3CG6MMYBTJ7A'],
-      :secret_access_key => ENV['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']
-    }
+config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => ENV['AWS_BUCKET'],
+    :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
   }
+}
 end
