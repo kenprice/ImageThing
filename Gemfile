@@ -5,6 +5,8 @@ ruby "2.1.2"
 gem 'rails', '4.0.2'
 
 gem 'unicorn',        '4.8.3'
+#Amazon AWS for S3
+gem 'aws-sdk'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
