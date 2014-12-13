@@ -1,5 +1,3 @@
-
-
 class PostsController < ApplicationController
   include PostsHelper
   before_action :logged_in_user, only: [:new, :update, :edit]

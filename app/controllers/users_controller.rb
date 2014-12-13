@@ -52,6 +52,7 @@ class UsersController < ApplicationController
     #user photos and allows him to edit.
     @user = User.find(params[:id])
     @posts = @user.posts.page(params[:page])
+    @allposts = @user.posts
   end
 
   private
