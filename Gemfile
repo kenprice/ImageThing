@@ -4,6 +4,8 @@ ruby "2.1.2"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
+gem 'unicorn',        '4.8.3'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -21,6 +23,7 @@ gem 'jquery-rails', '~> 2.3.0'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
+
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
@@ -73,7 +76,6 @@ end
 group :production do
   gem 'pg',             '0.17.1'  #use PostgreSQL
   gem 'rails_12factor', '0.0.2'
-  gem 'unicorn',        '4.8.3'   #use unicorn app server
 end
 
 # Use Capistrano for deployment

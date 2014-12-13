@@ -12,4 +12,9 @@ class Post < ActiveRecord::Base
 
   #descend from newest to oldest
   default_scope -> { order('created_at DESC') }
+
+
+  def photo_url
+  	photo.url(:medium)
+  end
 end
